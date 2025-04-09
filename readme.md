@@ -1,9 +1,8 @@
-````markdown
 # Crehana Challenge
 
 Este proyecto es una aplicación móvil desarrollada con React Native, Expo, NativeWind, y Apollo Client. La aplicación permite a los usuarios explorar una lista de países, aplicar filtros y ver detalles específicos de cada país. Además, se utiliza HLS para la reproducción de videos en streaming.
 
-## Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto (desarrollado en Android)
 
 1. **Instalar dependencias**:
    ```bash
@@ -26,7 +25,7 @@ Este proyecto es una aplicación móvil desarrollada con React Native, Expo, Nat
 
 1. **Pantalla de Carga (`LoadingScreen`)**:
 
-   - Se muestra mientras se cargan las fuentes y los datos iniciales.
+   - Se muestra mientras se cargan las fuentes y los datos iniciales. La obtención de los países se realiza utilizando GraphQL con Apollo Client.
 
 2. **Lista de Países (`CountryListScreen`)**:
 
@@ -44,21 +43,21 @@ La carpeta `src` contiene todo el código fuente de la aplicación. A continuaci
 - **/components**: Componentes reutilizables que se utilizan en diferentes partes de la aplicación.
 
   - `LoadingDots`: Animación de puntos de carga.
-  - `ScreenContainer`: Contenedor base para las pantallas, con soporte para temas y navegación.
+  - `ScreenContainer`: Contenedor base para las pantallas, con soporte navegación hacia atrás.
   - `HlsVideoPlayer`: Componente que maneja la reproducción de videos en formato HLS, permitiendo reproducir un flujo de video en vivo utilizando una URL `.m3u8`. Incluye controles de reproducción como play/pause y una barra de progreso (agregados a los nativos del reproductor original).
 
 - **/contexts**: Contextos globales para manejar el estado compartido.
 
-  - `countriesContext.tsx`: Proporciona un contexto para manejar los datos de países en toda la aplicación.
+  - `countriesContext.tsx`: Proporciona un contexto para manejar los datos de países en toda la aplicación. Permite acceder rápidamente a países, continentes y monedas.
 
 - **/graphql**: Configuración de Apollo Client y consultas/mutaciones GraphQL.
 
   - `apolloClient.ts`: Configura el cliente Apollo para interactuar con la API GraphQL.
-  - `queries.ts`: Contiene la query que obtiene la lista de paises junto a sus detalles como continente, idioma, moneda, etc.
+  - `queries.ts`: Contiene la query que obtiene la lista de países junto a sus detalles como continente, idioma, moneda, etc.
 
 - **/hooks**: Hooks personalizados para manejar lógica reutilizable.
 
-  - `useCountries.ts`: Hook para obtener datos de países desde el contexto.
+  - `useCountries.ts`: Hook para obtener detalles de países desde el contexto.
   - `useColors.ts`: Hook para manejar colores dinámicos basados en el tema.
   - `useLocalization.ts`: Hook para manejar el lenguaje del dispositivo.
 
@@ -76,7 +75,7 @@ La carpeta `src` contiene todo el código fuente de la aplicación. A continuaci
   - `countryListScreen/`: Pantalla principal que muestra una lista de países con filtros y búsqueda.
   - `countryDetailsScreen.tsx`: Pantalla que muestra los detalles de un país seleccionado.
   - `loadingScreen.tsx`: Pantalla de carga que se muestra mientras se inicializa la aplicación.
-  - `errorScreen.tsx`: Pantalla de error que se muestra cuando no es posible obtener la lista de paises.
+  - `errorScreen.tsx`: Pantalla de error que se muestra cuando no es posible obtener la lista de países.
 
 - **/theme**: Configuraciones relacionadas con el tema de la aplicación.
 
@@ -110,7 +109,6 @@ import { useTranslation } from 'react-i18next';
 
 const { t } = useTranslation();
 ```
-````
 
 ### 3. Tailwind y NativeWind
 
@@ -121,8 +119,7 @@ La aplicación utiliza **NativeWind** (una implementación de **Tailwind CSS** p
 - Archivo principal: `tailwind.config.js`
 - Clases personalizadas: Se han extendido colores y fuentes en la configuración de Tailwind.
 
-**Uso:**
-Para aplicar estilos, utiliza las clases de Tailwind directamente en los componentes:
+**Ejemplo usando Poppins:**
 
 ```tsx
 <View className="flex-1 items-center justify-center">
@@ -134,4 +131,5 @@ Para aplicar estilos, utiliza las clases de Tailwind directamente en los compone
 
 ```
 
+Este formato debería mostrarse correctamente en cualquier editor de Markdown o vista previa. ¡Avísame si necesitas más ajustes!
 ```
