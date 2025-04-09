@@ -129,7 +129,7 @@ The app uses **NativeWind** (an implementation of **Tailwind CSS** for React Nat
 
 ## Screenshots
 
-![Demo Video](https://drive.google.com/file/d/1QOujiwx0B6T7zFsgsJ37HDBdGxJ00e68/view?usp=sharing)
+[Demo Video](https://drive.google.com/file/d/1QOujiwx0B6T7zFsgsJ37HDBdGxJ00e68/view?usp=sharing)
 
 <img src="docs/images/splash.png" width="400" />
 <img src="docs/images/loading.png" width="400" />
