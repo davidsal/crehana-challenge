@@ -1,49 +1,40 @@
 import { useEffect, useRef } from 'react';
 import { View, Animated } from 'react-native';
 
+// Dot component handles individual animation of each dot
 const Dot = ({ delay }: { delay: number }) => {
   const opacity = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    const animate = () => {
+    // Loop the animation of opacity for fading in and out
+    const loop = () => {
       Animated.sequence([
-        Animated.timing(opacity, {
-          toValue: 1,
-          duration: 600,
-          useNativeDriver: true,
-        }),
-        Animated.timing(opacity, {
-          toValue: 0,
-          duration: 600,
-          useNativeDriver: true,
-        }),
+        Animated.timing(opacity, { toValue: 1, duration: 600, useNativeDriver: true }),
+        Animated.timing(opacity, { toValue: 0, duration: 600, useNativeDriver: true }),
         Animated.delay(300),
-      ]).start(() => animate());
+      ]).start(loop);
     };
 
-    const timeout = setTimeout(() => {
-      animate();
-    }, delay);
-
-    return () => clearTimeout(timeout);
-  }, []);
+    // Start the loop animation after the specified delay
+    const id = setTimeout(loop, delay);
+    return () => clearTimeout(id);
+  }, [delay]);
 
   return (
     <Animated.View
-      className="bg-primary dark:bg-onBackground-dark mx-1 h-3 w-3 rounded-full"
+      className="mx-1 h-3 w-3 rounded-full bg-primary dark:bg-onBackground-dark"
       style={{ opacity }}
     />
   );
 };
 
-const LoadingDots = () => {
+// LoadingDots component handles the animation of three dots fading in and out
+export default function LoadingDots() {
   return (
-    <View className="flex flex-row items-center justify-center">
-      <Dot delay={0} />
-      <Dot delay={300} />
-      <Dot delay={600} />
+    <View className="flex-row items-center justify-center">
+      {[0, 300, 600].map((delay) => (
+        <Dot key={delay} delay={delay} />
+      ))}
     </View>
   );
-};
-
-export default LoadingDots;
+}
