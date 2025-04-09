@@ -129,12 +129,10 @@ The app uses **NativeWind** (an implementation of **Tailwind CSS** for React Nat
 
 ## Screenshots
 
-## Screenshots
-
-![Image 1](docs/images/splash.png)
-![Image 2](docs/images/loading.png)
-![Image 3](docs/images/list.png)
-![Image 4](docs/images/continents.png)
-![Image 5](docs/images/currencies.png)
-![Image 6](docs/images/details.png)
-![Image 7](docs/images/hls.png)
+<img src="docs/images/splash.png" width="400" />
+<img src="docs/images/loading.png" width="400" />
+<img src="docs/images/list.png" width="400" />
+<img src="docs/images/continents.png" width="400" />
+<img src="docs/images/currencies.png" width="400" />
+<img src="docs/images/details.png" width="400" />
+<img src="docs/images/hls.png" width="400" />
