@@ -4,9 +4,10 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { convertToEmoji } from '@utils/helpers';
 import { Country, RootStackParamList } from '@utils/types';
 import { useState } from 'react';
-import { FlatList, Modal, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import SearchBar from './components/searchBar';
 import { useTranslation } from 'react-i18next';
+import { FlatList, Modal, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+
+import SearchBar from './components/searchBar';
 
 type ModalType = '' | 'continent' | 'currency';
 
@@ -47,7 +48,7 @@ function CountryListScreen({ navigation }: NativeStackScreenProps<RootStackParam
   const renderFilterButton = (label: string, value: string, type: ModalType) => (
     <TouchableOpacity
       onPress={() => setModalType(type)}
-      className="bg-border/10 flex-1 items-center justify-center rounded-md p-2">
+      className="flex-1 items-center justify-center rounded-md bg-border/10 p-2">
       <Text className="font-poppins-bold text-lg text-onBackground">{label}</Text>
       <Text className="mt-1 font-poppins text-onBackground">
         {getContinentDisplayValue(value, t)}

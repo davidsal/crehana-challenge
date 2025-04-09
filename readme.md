@@ -3,6 +3,38 @@
 
 Este proyecto es una aplicación móvil desarrollada con React Native, Expo, NativeWind, y Apollo Client. La aplicación permite a los usuarios explorar una lista de países, aplicar filtros y ver detalles específicos de cada país. Además, se utiliza HLS para la reproducción de videos en streaming.
 
+## Cómo ejecutar el proyecto
+
+1. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
+2. **Iniciar el servidor de desarrollo**:
+   ```bash
+   npm run android
+   ```
+
+## Tecnologías utilizadas
+
+- **React Native**: Framework principal para el desarrollo móvil.
+- **Expo**: Herramienta para simplificar el desarrollo y la ejecución de la app.
+- **NativeWind**: Manejo de estilos con clases de Tailwind CSS.
+- **Apollo Client**: Cliente GraphQL para manejar datos remotos.
+- **i18next**: Internacionalización para soportar múltiples idiomas.
+
+## Flujo de la Aplicación
+
+1. **Pantalla de Carga (`LoadingScreen`)**:
+
+   - Se muestra mientras se cargan las fuentes y los datos iniciales.
+
+2. **Lista de Países (`CountryListScreen`)**:
+
+   - Muestra una lista de países con opciones de búsqueda y filtros por continente y moneda.
+
+3. **Detalles del País (`CountryDetailsScreen`)**:
+   - Muestra información detallada sobre un país seleccionado junto a un video HLS.
+
 ## Estructura del Proyecto
 
 ### 1. `src`
@@ -28,6 +60,7 @@ La carpeta `src` contiene todo el código fuente de la aplicación. A continuaci
 
   - `useCountries.ts`: Hook para obtener datos de países desde el contexto.
   - `useColors.ts`: Hook para manejar colores dinámicos basados en el tema.
+  - `useLocalization.ts`: Hook para manejar el lenguaje del dispositivo.
 
 - **/languages**: Internacionalización (i18n) para soportar múltiples idiomas.
 
@@ -97,65 +130,8 @@ Para aplicar estilos, utiliza las clases de Tailwind directamente en los compone
 </View>
 ```
 
-## Cómo ejecutar el proyecto
-
-1. **Instalar dependencias**:
-   ```bash
-   npm install
-   ```
-2. **Iniciar el servidor de desarrollo**:
-   ```bash
-   npm start
-   ```
-3. **Probar en un dispositivo/emulador**:
-   - Escanea el código QR con la app de **Expo Go**.
-   - O utiliza un emulador Android/iOS.
-
-## Flujo de la Aplicación
-
-1. **Pantalla de Carga (`LoadingScreen`)**:
-
-   - Se muestra mientras se cargan las fuentes y los datos iniciales.
-
-2. **Lista de Países (`CountryListScreen`)**:
-
-   - Muestra una lista de países con opciones de búsqueda y filtros por continente y moneda.
-
-3. **Detalles del País (`CountryDetailsScreen`)**:
-   - Muestra información detallada sobre un país seleccionado.
-
-## Tecnologías utilizadas
-
-- **React Native**: Framework principal para el desarrollo móvil.
-- **Expo**: Herramienta para simplificar el desarrollo y la ejecución de la app.
-- **NativeWind**: Manejo de estilos con clases de Tailwind CSS.
-- **Apollo Client**: Cliente GraphQL para manejar datos remotos.
-- **i18next**: Internacionalización para soportar múltiples idiomas.
-
-## Contribución
-
-Si deseas contribuir al proyecto, sigue estos pasos:
-
-1. Haz un fork del repositorio.
-2. Crea una rama para tu funcionalidad:
-   ```bash
-   git checkout -b funcionalidad
-   ```
-3. Realiza tus cambios y haz un commit:
-   ```bash
-   git commit -m "Descripción de los cambios"
-   ```
-4. Envía tus cambios:
-   ```bash
-   git push origin funcionalidad
-   ```
-5. Abre un Pull Request.
-
-## Licencia
-
-Este proyecto está bajo la licencia **MIT**.
+## Screenshots
 
 ```
 
-Este archivo `README.md` proporciona una guía clara y detallada sobre la estructura del proyecto, la configuración y cómo contribuir, cubriendo todos los aspectos importantes.
 ```

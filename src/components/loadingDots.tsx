@@ -20,12 +20,7 @@ const Dot = ({ delay }: { delay: number }) => {
     return () => clearTimeout(id);
   }, [delay]);
 
-  return (
-    <Animated.View
-      className="mx-1 h-3 w-3 rounded-full bg-primary dark:bg-onBackground-dark"
-      style={{ opacity }}
-    />
-  );
+  return <Animated.View className="mx-1 h-3 w-3 rounded-full bg-primary" style={{ opacity }} />;
 };
 
 // LoadingDots component handles the animation of three dots fading in and out

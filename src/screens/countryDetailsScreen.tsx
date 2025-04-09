@@ -40,7 +40,7 @@ const CountryDetailsScreen = ({ route }: CountryDetailsScreenProps) => {
 
         <Text className="text-center font-poppins-bold text-3xl">{countryDetails.name}</Text>
 
-        <Text className="border-border mb-2 border-b py-3 font-poppins text-xl text-onBackground">
+        <Text className="mb-2 border-b border-border py-3 font-poppins text-xl text-onBackground">
           {t('screen.countryDetailsScreen.details')}
         </Text>
 
@@ -62,7 +62,7 @@ const CountryDetailsScreen = ({ route }: CountryDetailsScreenProps) => {
           value={countryDetails.languages.map((language) => language.name).join(', ')}
         />
 
-        <Text className="border-border mb-2 border-b py-3 font-poppins text-xl text-onBackground">
+        <Text className="mb-2 border-b border-border py-3 font-poppins text-xl text-onBackground">
           Video HLS
         </Text>
 

@@ -8,6 +8,7 @@ import { ApolloProvider } from '@apollo/client';
 import APOLLO_CLIENT from '@graphql/apolloClient';
 import { StatusBar } from 'expo-status-bar';
 import '@languages/i18n';
+import useLocalization from '@hooks/useLocalization';
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
@@ -24,6 +25,8 @@ export default function App() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useLocalization();
 
   if (fontsLoaded && isReady === true) {
     return (

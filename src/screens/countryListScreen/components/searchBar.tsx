@@ -31,7 +31,7 @@ const SearchBar = ({ onChange }: { onChange: (query: string) => void }) => {
   };
 
   return (
-    <View className="border-border flex-row items-center rounded-md border bg-white px-2">
+    <View className="flex-row items-center rounded-md border border-border bg-white px-2">
       <Ionicons name="search" size={20} color={borderColor} />
 
       <TextInput

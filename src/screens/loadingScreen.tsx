@@ -16,7 +16,7 @@ const LoadingScreen = ({ text = false }: LoadingScreenProps) => {
   return (
     <View
       style={{ backgroundColor: text ? primaryColor : undefined }}
-      className="flex-1 items-center justify-center gap-8 dark:bg-primary-dark">
+      className="flex-1 items-center justify-center gap-8">
       {text ? (
         <>
           <Ionicons name="location-outline" size={90} color={backgroundColor} />
