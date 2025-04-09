@@ -1,10 +1,13 @@
-import AppContainer from '@components/appContainer';
 import './global.css';
-import SplashScreen from '@screens/splashScreen';
+import LoadingScreen from '@screens/loadingScreen';
 import { useFonts } from 'expo-font';
 import { useEffect, useState } from 'react';
-import { Text } from 'react-native';
-import ScreenContainer from '@components/screenContainer';
+import { CountriesProvider } from '@contexts/countriesContext';
+import AppNavigationContainer from '@navigation/appNavigationContainer';
+import { ApolloProvider } from '@apollo/client';
+import APOLLO_CLIENT from '@graphql/apolloClient';
+import { StatusBar } from 'expo-status-bar';
+import '@languages/i18n';
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
@@ -22,15 +25,16 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
-    <AppContainer>
-      {fontsLoaded && isReady === true ? (
-        <ScreenContainer>
-          <Text className="font-poppins">Country Picker</Text>
-        </ScreenContainer>
-      ) : (
-        <SplashScreen />
-      )}
-    </AppContainer>
-  );
+  if (fontsLoaded && isReady === true) {
+    return (
+      <ApolloProvider client={APOLLO_CLIENT}>
+        <CountriesProvider>
+          <StatusBar style="auto" />
+          <AppNavigationContainer />
+        </CountriesProvider>
+      </ApolloProvider>
+    );
+  }
+
+  return <LoadingScreen text />;
 }
