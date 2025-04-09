@@ -4,11 +4,19 @@ This project is a mobile application developed with React Native, Expo, NativeWi
 
 ## How to run the project (developed for Android)
 
-1. **Install dependencies**:
+1. **Environment**:
+   ```bash
+   Android Studio: v2024.3.1 Patch 1 (latest)
+   Android Emulator: v35.4.9 (latest)
+   SDK Platform: Android 16.0
+   Android SDK Build Tools: v36
+   Android SDK Platform Tools: v35.0.2
+   ```
+2. **Install dependencies**:
    ```bash
    npm install
    ```
-2. **Start the development server**:
+3. **Start the development server**:
    ```bash
    npm run android
    ```
