@@ -1,108 +1,108 @@
 # Crehana Challenge
 
-Este proyecto es una aplicación móvil desarrollada con React Native, Expo, NativeWind, y Apollo Client. La aplicación permite a los usuarios explorar una lista de países, aplicar filtros y ver detalles específicos de cada país. Además, se utiliza HLS para la reproducción de videos en streaming.
+This project is a mobile application developed with React Native, Expo, NativeWind, and Apollo Client. The app allows users to explore a list of countries, apply filters, and view specific details of each country. Additionally, HLS is used for streaming video playback.
 
-## Cómo ejecutar el proyecto (desarrollado en Android)
+## How to run the project (developed for Android)
 
-1. **Instalar dependencias**:
+1. **Install dependencies**:
    ```bash
    npm install
    ```
-2. **Iniciar el servidor de desarrollo**:
+2. **Start the development server**:
    ```bash
    npm run android
    ```
 
-## Tecnologías utilizadas
+## Technologies Used
 
-- **React Native**: Framework principal para el desarrollo móvil.
-- **Expo**: Herramienta para simplificar el desarrollo y la ejecución de la app.
-- **NativeWind**: Manejo de estilos con clases de Tailwind CSS.
-- **Apollo Client**: Cliente GraphQL para manejar datos remotos.
-- **i18next**: Internacionalización para soportar múltiples idiomas.
+- **React Native**: Main framework for mobile development.
+- **Expo**: Tool to simplify the development and execution of the app.
+- **NativeWind**: Styling with Tailwind CSS classes.
+- **Apollo Client**: GraphQL client for handling remote data.
+- **i18next**: Internationalization to support multiple languages.
 
-## Flujo de la Aplicación
+## Application Flow
 
-1. **Pantalla de Carga (`LoadingScreen`)**:
+1. **Loading Screen (`LoadingScreen`)**:
 
-   - Se muestra mientras se cargan las fuentes y los datos iniciales. La obtención de los países se realiza utilizando GraphQL con Apollo Client.
+   - Displays while fonts and initial data are being loaded. Country data is fetched using GraphQL with Apollo Client.
 
-2. **Lista de Países (`CountryListScreen`)**:
+2. **Country List (`CountryListScreen`)**:
 
-   - Muestra una lista de países con opciones de búsqueda y filtros por continente y moneda.
+   - Displays a list of countries with search and filter options by continent and currency.
 
-3. **Detalles del País (`CountryDetailsScreen`)**:
-   - Muestra información detallada sobre un país seleccionado junto a un video HLS.
+3. **Country Details (`CountryDetailsScreen`)**:
+   - Shows detailed information about a selected country along with an HLS video.
 
-## Estructura del Proyecto
+## Project Structure
 
 ### 1. `src`
 
-La carpeta `src` contiene todo el código fuente de la aplicación. A continuación, se describen las subcarpetas principales:
+The `src` folder contains all the source code for the application. The main subfolders are described below:
 
-- **/components**: Componentes reutilizables que se utilizan en diferentes partes de la aplicación.
+- **/components**: Reusable components used across the application.
 
-  - `LoadingDots`: Animación de puntos de carga.
-  - `ScreenContainer`: Contenedor base para las pantallas, con soporte navegación hacia atrás.
-  - `HlsVideoPlayer`: Componente que maneja la reproducción de videos en formato HLS, permitiendo reproducir un flujo de video en vivo utilizando una URL `.m3u8`. Incluye controles de reproducción como play/pause y una barra de progreso (agregados a los nativos del reproductor original).
+  - `LoadingDots`: Loading dots animation.
+  - `ScreenContainer`: Base container for screens with back navigation support.
+  - `HlsVideoPlayer`: Component that handles HLS video playback, allowing live video streams to be played using a `.m3u8` URL. Includes playback controls such as play/pause and a progress bar (added to the native player).
 
-- **/contexts**: Contextos globales para manejar el estado compartido.
+- **/contexts**: Global contexts to handle shared state.
 
-  - `countriesContext.tsx`: Proporciona un contexto para manejar los datos de países en toda la aplicación. Permite acceder rápidamente a países, continentes y monedas.
+  - `countriesContext.tsx`: Provides a context to manage country data throughout the application. Allows quick access to countries, continents, and currencies.
 
-- **/graphql**: Configuración de Apollo Client y consultas/mutaciones GraphQL.
+- **/graphql**: Apollo Client setup and GraphQL queries/mutations.
 
-  - `apolloClient.ts`: Configura el cliente Apollo para interactuar con la API GraphQL.
-  - `queries.ts`: Contiene la query que obtiene la lista de países junto a sus detalles como continente, idioma, moneda, etc.
+  - `apolloClient.ts`: Configures the Apollo client to interact with the GraphQL API.
+  - `queries.ts`: Contains the query to fetch the list of countries along with their details such as continent, language, currency, etc.
 
-- **/hooks**: Hooks personalizados para manejar lógica reutilizable.
+- **/hooks**: Custom hooks to handle reusable logic.
 
-  - `useCountries.ts`: Hook para obtener detalles de países desde el contexto.
-  - `useColors.ts`: Hook para manejar colores dinámicos basados en el tema.
-  - `useLocalization.ts`: Hook para manejar el lenguaje del dispositivo.
+  - `useCountries.ts`: Hook to fetch country details from the context.
+  - `useColors.ts`: Hook to manage dynamic colors based on the theme.
+  - `useLocalization.ts`: Hook to manage the device's language.
 
-- **/languages**: Internacionalización (i18n) para soportar múltiples idiomas.
+- **/languages**: Internationalization (i18n) for supporting multiple languages.
 
-  - `i18n.ts`: Configura i18next para manejar traducciones.
-  - `locales/`: Contiene archivos JSON con las traducciones para cada idioma (por ejemplo, `en.json`, `es.json`).
+  - `i18n.ts`: Configures i18next to handle translations.
+  - `locales/`: Contains JSON files with translations for each language (e.g., `en.json`, `es.json`).
 
-- **/navigation**: Configuración de la navegación de la aplicación.
+- **/navigation**: Navigation setup for the app.
 
-  - `appNavigationContainer.tsx`: Define el contenedor de navegación utilizando `react-navigation` y un stack navigator.
+  - `appNavigationContainer.tsx`: Defines the navigation container using `react-navigation` and a stack navigator.
 
-- **/screens**: Pantallas principales de la aplicación.
+- **/screens**: Main screens of the application.
 
-  - `countryListScreen/`: Pantalla principal que muestra una lista de países con filtros y búsqueda.
-  - `countryDetailsScreen.tsx`: Pantalla que muestra los detalles de un país seleccionado.
-  - `loadingScreen.tsx`: Pantalla de carga que se muestra mientras se inicializa la aplicación.
-  - `errorScreen.tsx`: Pantalla de error que se muestra cuando no es posible obtener la lista de países.
+  - `countryListScreen/`: Main screen displaying a list of countries with filters and search.
+  - `countryDetailsScreen.tsx`: Screen showing the details of a selected country.
+  - `loadingScreen.tsx`: Loading screen shown while the app is initializing.
+  - `errorScreen.tsx`: Error screen shown when the list of countries cannot be retrieved.
 
-- **/theme**: Configuraciones relacionadas con el tema de la aplicación.
+- **/theme**: Theme-related configurations for the app.
 
-  - `colors.ts`: Define los colores utilizados en la aplicación.
+  - `colors.ts`: Defines the colors used in the app.
 
-- **/utils**: Funciones auxiliares y tipos globales.
+- **/utils**: Helper functions and global types.
 
-  - `helpers.ts`: Funciones utilitarias como `convertToEmoji`.
-  - `types.ts`: Define tipos TypeScript utilizados en toda la aplicación, como `RootStackParamList`.
+  - `helpers.ts`: Utility functions such as `convertToEmoji`.
+  - `types.ts`: Defines TypeScript types used throughout the app, such as `RootStackParamList`.
 
-- **/App.tsx**: Archivo principal que carga las fuentes personalizadas (Poppins light, regular y medium), gestiona el estado de preparación de la aplicación y renderiza el contenido con los proveedores ApolloProvider y CountriesProvider, además de configurar la navegación y la barra de estado.
+- **/App.tsx**: Main file that loads custom fonts (Poppins light, regular, and medium), manages the app's preparation state, and renders content with ApolloProvider and CountriesProvider, in addition to setting up navigation and the status bar.
 
-- **/tailwind.config.js**: Archivo principal que se encarga de los overrides del tema base de TailWind.
+- **/tailwind.config.js**: Main file responsible for overriding the base theme of Tailwind.
 
-### 2. Internacionalización (i18n)
+### 2. Internationalization (i18n)
 
-La aplicación utiliza **i18next** para manejar múltiples idiomas.
+The app uses **i18next** to handle multiple languages.
 
-**Configuración:**
+**Configuration:**
 
-- Archivo principal: `i18n.ts`
-- Idiomas soportados:
-  - `en.json`: Traducciones en inglés.
-  - `es.json`: Traducciones en español.
+- Main file: `i18n.ts`
+- Supported languages:
+  - `en.json`: Translations in English.
+  - `es.json`: Translations in Spanish.
 
-**Uso:**
-Para traducir textos en la aplicación, utiliza el hook `useTranslation`:
+**Usage:**
+To translate text in the app, use the `useTranslation` hook:
 
 ```tsx
 import { useTranslation } from 'react-i18next';
@@ -110,16 +110,16 @@ import { useTranslation } from 'react-i18next';
 const { t } = useTranslation();
 ```
 
-### 3. Tailwind y NativeWind
+### 3. Tailwind and NativeWind
 
-La aplicación utiliza **NativeWind** (una implementación de **Tailwind CSS** para React Native) para manejar estilos de manera eficiente.
+The app uses **NativeWind** (an implementation of **Tailwind CSS** for React Native) to handle styles efficiently.
 
-**Configuración:**
+**Configuration:**
 
-- Archivo principal: `tailwind.config.js`
-- Clases personalizadas: Se han extendido colores y fuentes en la configuración de Tailwind.
+- Main file: `tailwind.config.js`
+- Custom classes: Colors and fonts are extended in the Tailwind configuration.
 
-**Ejemplo usando Poppins:**
+**Example using Poppins:**
 
 ```tsx
 <View className="flex-1 items-center justify-center">
@@ -131,5 +131,5 @@ La aplicación utiliza **NativeWind** (una implementación de **Tailwind CSS** p
 
 ```
 
-Este formato debería mostrarse correctamente en cualquier editor de Markdown o vista previa. ¡Avísame si necesitas más ajustes!
+This format should display correctly in any Markdown editor or preview. Let me know if you need further adjustments!
 ```
