@@ -12,6 +12,11 @@
       "@languages/*": ["src/languages/*"],
       "@routes/*": ["src/routes/*"],
       "@theme/*": ["src/theme/*"],
+      "@graphql/*": ["src/graphql/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@navigation/*": ["src/navigation/*"]
     }
   }
 }
