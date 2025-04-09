@@ -129,7 +129,12 @@ The app uses **NativeWind** (an implementation of **Tailwind CSS** for React Nat
 
 ## Screenshots
 
-```
+## Screenshots
 
-This format should display correctly in any Markdown editor or preview. Let me know if you need further adjustments!
-```
+![Image 1](docs/images/splash.png)
+![Image 2](docs/images/loading.png)
+![Image 3](docs/images/list.png)
+![Image 4](docs/images/continents.png)
+![Image 5](docs/images/currencies.png)
+![Image 6](docs/images/details.png)
+![Image 7](docs/images/hls.png)
