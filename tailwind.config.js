@@ -1,3 +1,5 @@
+import COLORS from './src/theme/colors';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./App.{js,ts,tsx}', './src/**/*.{js,ts,tsx}'],
@@ -12,16 +14,20 @@ module.exports = {
       },
       colors: {
         background: {
-          DEFAULT: '#ffffff',
-          dark: '#181b32',
+          DEFAULT: COLORS.background.light,
+          dark: COLORS.background.dark,
         },
         onBackground: {
-          DEFAULT: '#181b32',
-          dark: '#ffffff',
+          DEFAULT: COLORS.onBackground.light,
+          dark: COLORS.onBackground.dark,
         },
         primary: {
-          DEFAULT: '#4b22f4',
-          dark: '#4b22f4',
+          DEFAULT: COLORS.primary.light,
+          dark: COLORS.primary.dark,
+        },
+        border: {
+          DEFAULT: COLORS.border.light,
+          dark: COLORS.border.dark,
         },
       },
     },
